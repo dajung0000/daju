@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*layout*/
+#header {
+    width: 100%;
+    background-color: rgba(0, 0, 0,.3);
+    
+    background: url(img/) no-repeat 0 0;
+    background-size:cover;
+    position: relative;
+}
+#header::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(3,1,21,0.7);
+}
+
+/*가운데*/
+.container {
+    position: relative;
+    width: 1100px;  height: 100%;
+    margin: 0 auto;
+    top: 0;
+    background-color: rgba(0, 0, 0,.4);
+}
+
+/*header*/
+.header {height: 91px; border-bottom: 1px solid rgba(255,255,255,.2);}
+.header h1 {text-align: center; padding-top: 2%;}
+.header h1 em img {width: 140px;}
+.header .nav ul {margin-bottom: -26px;}
+.header .nav ul li {position: absolute;}
+.header .nav ul li:nth-child(1) {left: 166px;}
+.header .nav ul li:nth-child(2) {left: 256px;}
+.header .nav ul li:nth-child(3) {left: 345px;}
+.header .nav ul li:nth-child(4) {right: 345px;}
+.header .nav ul li:nth-child(5) {right: 256px;}
+.header .nav ul li:nth-child(6) {right: 166px;}
+.header .nav ul li a {color: #fff; font-size: 18px;}
+
+/*movie*/
+.movie {padding-top: 100px;}
+.movie h2 {color: #fff; text-align: center;}
+.movie .cont {}
+.movie .cont ul {overflow: hidden;}
+.movie .cont ul li { float: left;}
+.movie .cont ul li:nth-child(2) {margin: 0 20px 0 40px;}
+.movie .cont ul li:nth-child(3) {margin: 0 40px 0 20px;}
+.movie .cont ul li img {width: 245px; height: 352px; border-radius: 5px;}
+
+
+
+

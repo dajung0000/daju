@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <link rel="stylesheet" href="jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.bx_Slider').bxSlider({
+        auto: true, 
+        speed: 500, //단위는 ms
+        pause: 4000, //4000ms가 기본적인 값이라고 서치함
+        autoControls: true, 
+        //외에도 이미지가 넘어가는 효과를 줄 수 있음 mode
+      });
+    });
+  </script>
+</head>
+<body>
+    <div class="bx_Slider">
+        <div><img src="../brandi/img/banner.jpg" alt="#"></div>
+        <div><img src="../brandi/img/banner2.jpg" alt="#"></div>
+    </div>
+</body>
+</html>

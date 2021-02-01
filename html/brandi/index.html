@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body style="overflow-y: scroll; overflow-x: hidden;">
+    <header id="header">
+        <section class="header">
+            <a href="#"><img src="img/logo@3x.png" alt="BRANDI"></a>
+            <form action="search" class="search">
+                <button class="search_btn"></button>
+                <input type="text" name="search_input" class="search_input" aria-label="검색어를 입력하세요">
+            </form>
+            <ul class="menu">
+                <li><a href="#">찜</a></li>
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">마이페이지</a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">입점문의</a></li>
+            </ul>
+        </section>
+        <ul class="tabMenu">
+            <li><a href="#">홈</a></li>
+            <li><a href="#">랭킹</a></li>
+            <li><a href="#">하루배송</a></li>
+            <li class="active"><a href="#">쇼핑몰 · 마켓</a></li>
+            <li><a href="#">브랜드</a></li>
+            <li><a href="#">뷰티</a></li>
+            <li><a href="#">특가</a></li>
+            <li><a href="#">기획전</a></li>
+            <li><a href="#">스토어</a></li>
+        </ul>
+        <div class="subMenu active">
+            <ul>
+                <li>아우터
+                    <a href="#">자켓</a><a href="#">가디건</a><a href="#">코트</a><a href="#">점퍼</a><a href="#">패딩</a><a href="#">무스탕/퍼</a><a href="#">기타</a>
+                </li>
+                <li>가방
+                    <a href="#">크로스백</a><a href="#">토트백</a><a href="#">숄더백</a><a href="#">에코백</a><a href="#">클러치</a><a href="#">백팩</a>
+                </li>
+            </ul>
+            <ul>
+                <li>상의
+                    <a href="#">티셔츠</a><a href="#">셔츠/블라우스</a><a href="#">니트</a><a href="#">후드/맨투맨</a><a href="#">베스트</a>
+                </li>
+                <li>주얼리
+                    <a href="#">귀걸이</a><a href="#">목걸이</a><a href="#">팔찌/발찌</a><a href="#">반지</a>
+                </li>
+            </ul>
+            <ul>
+                <li>상의
+                    <a href="#">티셔츠</a><a href="#">셔츠/블라우스</a><a href="#">니트</a><a href="#">후드/맨투맨</a><a href="#">베스트</a>
+                </li>
+                <li>주얼리
+                    <a href="#">귀걸이</a><a href="#">목걸이</a><a href="#">팔찌/발찌</a><a href="#">반지</a>
+                </li>
+            </ul>
+            <ul>
+                <li>상의
+                    <a href="#">티셔츠</a><a href="#">셔츠/블라우스</a><a href="#">니트</a><a href="#">후드/맨투맨</a><a href="#">베스트</a>
+                </li>
+                <li>주얼리
+                    <a href="#">귀걸이</a><a href="#">목걸이</a><a href="#">팔찌/발찌</a><a href="#">반지</a>
+                </li>
+            </ul>
+            <ul>
+                <li>상의
+                    <a href="#">티셔츠</a><a href="#">셔츠/블라우스</a><a href="#">니트</a><a href="#">후드/맨투맨</a><a href="#">베스트</a>
+                </li>
+                <li>주얼리
+                    <a href="#">귀걸이</a><a href="#">목걸이</a><a href="#">팔찌/발찌</a><a href="#">반지</a>
+                </li>
+            </ul>
+            <ul>
+                <li>상의
+                    <a href="#">티셔츠</a><a href="#">셔츠/블라우스</a><a href="#">니트</a><a href="#">후드/맨투맨</a><a href="#">베스트</a>
+                </li>
+                <li>주얼리
+                    <a href="#">귀걸이</a><a href="#">목걸이</a><a href="#">팔찌/발찌</a><a href="#">반지</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="banner">
+        <div><img src="img/banner.jpg" alt="배너 이미지1"></div>
+        <div><img src="img/banner2.jpg" alt="배너 이미지2"></div>
+        <div><img src="img/banner.jpg" alt="배너 이미지3"></div>
+    </section>
+    <br>
+    <div class="dot">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script type="text/javascript">
+        $('.banner').slick();
+    </script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        let menu = $(".tabMenu > li");
+        menu.mouseover(function(e){
+            e.preventDefault();
+            let target = $(this)
+            let index = target.index()
+            menu.removeClass("active"); 
+            target.addClass("active"); 
+           
+            $(".subMenu").css("display","none");
+            $(".subMenu").eq(index).css("display","flex");
+
+        });
+    </script>
+</body>
+</html>
