@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <!--<link rel="stylesheet" href="css/slick-theme.css">-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+
+</head>
+<body>
+    <!-- slick -->
+    <div class="slick_slider">
+        <div><img src="../brandi/img/banner2.jpg" alt=""></div>
+        <div><img src="../brandi/img/banner.jpg" alt=""></div>
+    </div>
+    <button class="play">시작</button>
+    <button class="pause">정지</button>
+    <script type="text/javascript">
+        $('.slick_slider').slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+        $(".play").on('click',function(){
+            $(".slick_slider").slick('slickPlay');
+        });
+        $(".pause").on('click',function(){
+            $(".slick_slider").slick('slickPause');
+        });
+
+    </script>
+
+
+
+    <!-- bs_slider -->
+    <div class="bx_slider">
+        <div><a href="#"><img src="../brandi/img/banner.jpg" alt=""></a></div>
+        <div><a href="#"><img src="../brandi/img/banner2.jpg" alt=""></a></div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.bx_slider').bxSlider({
+                auto: true, 
+                speed: 500, //단위는 ms
+                pause: 2000, //4000ms가 기본적인 값이라고 서치함
+                autoControls: true, 
+                stopAutoOnClick: true,
+                pager: true,
+                //외에도 이미지가 넘어가는 효과를 줄 수 있음 mode
+            });
+        });
+        </script>
+
+
+    <!-- swiper_slider -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="../brandi/img/banner2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="../brandi/img/banner.jpg" alt=""></div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <script type="text/javascript"> 
+    const swiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        loop: true,
+
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        });   
+    </script>
+    </body>
+</html>
