@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li,ol {list-style: none;}
+        ul {display: flex;}
+        li {padding-right: 5px;}
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".plus").click(function() {
+                //.list 뒤에 ul 추가 
+                $(".list").append("<ul>" + $(".list ul").html() + "</ul>");
+                // 생성이나 삭제했을 때 번호 재설정 
+                CntFrush();
+            });
+            CntFrush();
+        });
+        
+        // 생성이나 삭제했을 때 번호 재설정 
+        function CntFrush() {
+            // ul의 개수만큼 반복 
+            $(".list > ul").each(function(index) {
+                // ul(index번째)의 첫번째 li에 index+1의 값을 넣어줌 
+                $(".list > ul:eq(" + index + ") > li:eq(0)").text((index + 1));
+            });
+            
+            $(".del").each(function(idx) {
+                $(".del:eq(" + idx + ")").attr("onclick", "DelBtnClick(" + idx + ")");
+            });
+            $(".plus").each(function(id) {
+                $(".plus:eq(" + id + ")").attr("onclick", "BtnClick(" + id + ")");
+            });
+            
+            
+        }
+
+        function DelBtnClick(str) {
+//             항목입력이 1개보다 클때만 실행 
+            if ($(".list > ul").length > 1) {
+                $(".list > ul:eq(" + str + ")").remove();
+                CntFrush();
+            } else {
+                alert("1개 남았습니다.")
+                return
+            }
+        }
+        function BtnClick(st) {
+//             항목입력이 1개보다 클때만 실행 
+            if ($(".list > ul").length < 5) {
+                $(".list > ul:eq(" + st + ")").add();
+                CntFrush();
+            } else {
+                alert("5개 까지 추가 가능합니다.")
+                return
+            }
+        }
+        
+        
+        
+         
+    </script>
+</head>
+
+<body>
+   <div class="list">
+       <ul>
+           <li>1</li>
+           <li><input type="text"></li>
+           <li>
+               <select name="select" id="select">
+                   <option value="option">선택하세요</option>
+                   <option value="option">옵션1</option>
+                   <option value="option">옵션2</option>
+                   <option value="option">옵션3</option>
+               </select>
+           </li>
+           <li><button class="plus">추가</button></li>
+           <li><button class="del">삭제</button></li>
+       </ul>
+   </div>
+</body>
+
+</html>

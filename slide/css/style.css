@@ -3,6 +3,38 @@
 /* reset */
 img {width: 100%; vertical-align: middle;}
 
+
+/* slick 시작 */
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  background-image: url(../../brandi/icon/controls.png);
+  font-size: 0;
+  color: transparent;
+}
+.slick-next {
+  right: 0;
+  margin: 0 10px 0 0;
+  background-position: 96px 128px;
+}
+.slick-dots {
+  position: relative;
+  left: 50%; top: 0;
+  display: flex;
+  padding: 0;
+}
+/* #slick-slide-control00,#slick-slide-control01 {display: none;} */
+
+
+/* bx_slider 시작 */
 .bx-wrapper {position: relative;}
 .bx_slider {width: 100%;}
 /* .bx-controls {position: absolute;} */
