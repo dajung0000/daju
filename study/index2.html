@@ -13,32 +13,32 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $(".plus").click(function() {
-                //.list 뒤에 ul 추가 
+                // .list ul안의 내용을 가져와 .list 뒤에 ul태그 추가 
                 $(".list").append("<ul>" + $(".list ul").html() + "</ul>");
                 // 생성이나 삭제했을 때 번호 재설정 
                 CntFrush();
             });
-            CntFrush();
+//            CntFrush();
         });
-        
-        // 생성이나 삭제했을 때 번호 재설정 
         function CntFrush() {
             // ul의 개수만큼 반복 
             $(".list > ul").each(function(index) {
-                // ul(index번째)의 첫번째 li에 index+1의 값을 넣어줌 
+                // ul의(n번째)의 첫번째 li에 index+1의 내용을 넣어줌 
                 $(".list > ul:eq(" + index + ") > li:eq(0)").text((index + 1));
             });
             
+            //각각의 삭제버튼에 대하여 onclick속성을 추가하고, 속성값은 DelBtnClick(" + idx + ")
             $(".del").each(function(idx) {
                 $(".del:eq(" + idx + ")").attr("onclick", "DelBtnClick(" + idx + ")");
             });
+            //각각의 추가버튼에 대하여 onclick속성을 추가하고, 속성값은 BtnClick(" + id + ")
             $(".plus").each(function(id) {
                 $(".plus:eq(" + id + ")").attr("onclick", "BtnClick(" + id + ")");
             });
             
-            
         }
 
+        //삭제버튼의 속성값
         function DelBtnClick(str) {
 //             항목입력이 1개보다 클때만 실행 
             if ($(".list > ul").length > 1) {
@@ -55,11 +55,10 @@
                 $(".list > ul:eq(" + st + ")").add();
                 CntFrush();
             } else {
+                $(".plus").remove();
                 alert("5개 까지 추가 가능합니다.")
-                return
-            }
+            } 
         }
-        
         
         
          
